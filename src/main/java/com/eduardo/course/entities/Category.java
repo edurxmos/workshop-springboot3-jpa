@@ -16,9 +16,8 @@ public class Category implements Serializable {
     private Integer id;
     private String name;
 
-    /*@JsonIgnore
-    @OneToMany(mappedBy = "tb_product")*/
-    @Transient
+    @JsonIgnore
+    @ManyToMany(mappedBy = "categories")
     private Set<Product> products = new HashSet<>();
 
     public Category() {
